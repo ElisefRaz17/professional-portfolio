@@ -1,45 +1,30 @@
-import React from "react";
 import {
-    Dispatch,
-    ReactNode,
-    SetStateAction,
-    createContext,
-    useContext,
+    useMemo,
     useState,
   } from 'react';
+import { ChipsContext } from './useChipsContext';
   
-    type ChipsContextProps = {
-        currentIndex: number
-        setCurrentIndex: Dispatch<SetStateAction<number>>
+    export interface ChipsContextProps {
+        currentIndex: number;
+        setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
     }
 
     type ChipsProviderProps = {
-        children: ReactNode
+        readonly children: React.ReactNode
     }
 
-    const initialContext: ChipsContextProps = {
-        currentIndex: 0,
-        setCurrentIndex: () => {},
-    }
 
-const ChipsContext = createContext<ChipsContextProps>(initialContext)
+
 
 function ChipsProvider({ children }: ChipsProviderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
+    const value = useMemo(() => ({ currentIndex, setCurrentIndex }), [currentIndex, setCurrentIndex])
 
     return (
-        <ChipsContext.Provider value={{ currentIndex, setCurrentIndex }}>
+        <ChipsContext.Provider value={value}>
             {children}
         </ChipsContext.Provider>
     )
 }
 
 export default ChipsProvider
-
-export function useChipsContext(): ChipsContextProps {
-    const context = useContext(ChipsContext)
-    if (context === undefined) {
-      throw new Error('useChips must be used within a ChipsProvider')
-    }
-    return context
-}

@@ -1,4 +1,3 @@
-import React from "react";
 import { SampleReactComponents } from "../components/SampleReactComponents";
 import PhotoGallery from "../components/PhotoGallery";
 import FigmaUI from "../components/FigmaUI";

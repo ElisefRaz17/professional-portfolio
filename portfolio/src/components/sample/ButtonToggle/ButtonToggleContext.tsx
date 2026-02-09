@@ -1,45 +1,34 @@
 import {
-    Dispatch,
-    ReactNode,
-    SetStateAction,
-    createContext,
-    useContext,
+    useMemo,
     useState,
   } from 'react';
-  import React from 'react';
+import { ButtonToggleContext } from './useButtonToggleContext';
+ 
 
-  type ButtonToggleContextProps = {
+ export interface ButtonToggleContextProps {
     currentIndex: number
-    setCurrentIndex: Dispatch<SetStateAction<number>>
+    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
   }
 
-    type ButtonToggleProviderProps = {
-        children: ReactNode
+   interface ButtonToggleProviderProps {
+        readonly children: React.ReactNode;
     }
 
-    const initialContext: ButtonToggleContextProps = {
-        currentIndex: 0,
-        setCurrentIndex: () => {},
-    }
 
-const ButtonToggleContext = createContext<ButtonToggleContextProps>(initialContext)
 
 function ButtonToggleProvider({ children }: ButtonToggleProviderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
 
+    const value = useMemo(
+        () => ({ currentIndex, setCurrentIndex }),
+        [currentIndex, setCurrentIndex]
+    );
+
     return (
-        <ButtonToggleContext.Provider value={{ currentIndex, setCurrentIndex }}>
+        <ButtonToggleContext.Provider value={value}>
             {children}
         </ButtonToggleContext.Provider>
     )
 }
 
 export default ButtonToggleProvider
-
-export function useButtonToggleContext(): ButtonToggleContextProps {
-    const context = useContext(ButtonToggleContext)
-    if (context === undefined) {
-      throw new Error('useButtonToggle must be used within a ButtonToggleProvider')
-    }
-    return context
-}

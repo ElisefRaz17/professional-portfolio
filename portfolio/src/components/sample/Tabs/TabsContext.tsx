@@ -1,48 +1,33 @@
 import {
-    Dispatch,
-    ReactNode,
-    SetStateAction,
-    createContext,
-    useContext,
+  useMemo,
     useState,
   } from 'react';
-  import React from 'react';
+import { TabsContext } from './useTabsContext';
+
   
-  type TabsContextProps = {
+  export type TabsContextProps = {
     currentIndex: number
-    setCurrentIndex: Dispatch<SetStateAction<number>>
+    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
   }
   
   type TabsProviderProps = {
-    children: ReactNode
-  }
-  
-  const initialContext: TabsContextProps = {
-    currentIndex: 0,
-    setCurrentIndex: () => {},
+    readonly children: React.ReactNode
   }
   
 
+  
 
-const TabsContext = createContext<TabsContextProps>(initialContext)
+
 
 function TabsProvider({ children }: TabsProviderProps) {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
+    const value = useMemo(() => ({ currentIndex, setCurrentIndex }), [currentIndex, setCurrentIndex])
 
     return (
-        <TabsContext.Provider value={{ currentIndex, setCurrentIndex }}>
+        <TabsContext.Provider value={value}>
             {children}
         </TabsContext.Provider>
     )
 }
   
   export default TabsProvider
-  
-  export function useTabsContext(): TabsContextProps {
-    const context = useContext(TabsContext)
-    if (context === undefined) {
-      throw new Error('useTabs must be used within a TabsProvider')
-    }
-    return context
-  }
-  

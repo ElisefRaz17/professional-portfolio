@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Card from "@mui/material/Card";
@@ -17,11 +17,11 @@ export default function ManageableStates() {
       {/* Calling the Autocomplete component and updating its state features */}
       <Autocomplete
         value={value}
-        onChange={(event: any, newValue: string | null) => {
+        onChange={(_event, newValue: string | null) => {
           setValue(newValue);
         }}
         inputValue={inputValue}
-        onInputChange={(event, newInputValue) => {
+        onInputChange={(_event, newInputValue) => {
           setInputValue(newInputValue);
         }}
         id="manageable-states-demo"
@@ -32,7 +32,7 @@ export default function ManageableStates() {
         <Card sx={{ padding: 2, margin: 2, position:'relative', marginLeft:'unset'}}>
         <Avatar sx={{float:'right'}}>{value ? value[0] : ""}</Avatar>
         <h1>Manageable States</h1>
-        <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
+        <div>{`value: ${value ?? "null"}`}</div>
         <div>{`inputValue: '${inputValue}'`}</div>
       </Card>
     </div>

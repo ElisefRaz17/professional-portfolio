@@ -1,7 +1,6 @@
 import React from "react";
-import ButtonToggleProvider, {
-  useButtonToggleContext,
-} from "./ButtonToggleContext.tsx";
+import ButtonToggleProvider from "./ButtonToggleContext.tsx";
+import { useButtonToggleContext } from "./useButtonToggleContext.ts";
 import "./ButtonToggle.css";
 
 type ButtonToggleTitlesProps = {
@@ -44,7 +43,7 @@ ButtonToggle.Contents = ({ items }) => {
       <div
         key={id}
         id={`buttontoggle-content-${id}`}
-        role="buttontoggle"
+        role="tabpanel"
         aria-labelledby={`buttontoggle-control-${id}`}
       >
         {content}
@@ -57,13 +56,13 @@ ButtonToggle.Titles = ({ items }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { currentIndex, setCurrentIndex } = useButtonToggleContext();
   return (
-    <div role="button-toggle" id="button-toggle">
+    <div role="tablist" id="button-toggle">
       {items.map(({ id, title }, index) => (
         <button
           key={id}
           id={`buttontoggle-control-${id}`}
-          role="buttontoggle"
-          aria-controls={`buttongroup-content-${id}`}
+          role="tab"
+          aria-controls={`buttontoggle-content-${id}`}
           aria-selected={currentIndex === index}
           onClick={() => {
             setCurrentIndex(index);
