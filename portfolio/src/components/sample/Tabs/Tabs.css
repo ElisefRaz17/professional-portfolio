@@ -1,0 +1,39 @@
+
+
+
+.icon{
+  width: 1.5em;
+  height: 1.5em;
+  left:0;
+}
+h1 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+
+button:hover {
+  border-color: darkcyan;
+}
+
+.tab{
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.tab.active{
+  padding: 10px;
+  border-bottom: 2px solid darkcyan;
+  transition: border-color 0.25s;
+  cursor: pointer;
+}
+div[role='tablist'] {
+  display: flex-start;
+  gap: 7rem;
+  border-bottom: 1px solid darkcyan;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+div[role="tabpanel"] {
+  background-color: #f9f9f9;
+}

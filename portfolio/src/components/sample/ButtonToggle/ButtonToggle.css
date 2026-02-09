@@ -1,0 +1,23 @@
+.button-toggle-item {
+  justify-content: center;
+  font:10px 1.2em 'Montserrat', sans-serif;
+  color: white;
+  background-color:rosybrown;
+  border:1px solid black;
+  width:75px;
+  height:40px;
+}
+
+.button-toggle-item:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.button-toggle-item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.button-toggle-item:only-child  {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+ }
