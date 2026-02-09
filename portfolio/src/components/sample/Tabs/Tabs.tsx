@@ -1,6 +1,7 @@
 import React from "react";
 import "./Tabs.css";
-import TabsProvider, { useTabsContext } from "./TabsContext";
+import TabsProvider from "./TabsContext";
+import { useTabsContext } from "./useTabsContext";
 import EditIcon from "@mui/icons-material/Edit";
 
 type TabTitlesProps = {
