@@ -7,8 +7,8 @@ const Contact = () => {
           Contact Me
         </h2>
         <p>
-          I currently work as a Software Engineer Consultant that specializes in Frontend Development currently but always open to backend, fullstack or UI/UX roles. If you
-          want to discuss about that feel free to email me or call me.
+          I am currently looking for a new role as either a  Software Engineer, Frontend Developer. If you
+          want to discuss about that feel free to email me.
         </p>
 
         <p className="py-2">

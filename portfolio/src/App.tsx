@@ -5,7 +5,8 @@ import Hero from "./components/Hero";
 import About from "./sections/About";
 import Project from "./sections/Project";
 import Contact from "./sections/Contact";
-
+import { SampleReactComponents } from "./components/SampleReactComponents";
+import FigmaUI from "./components/FigmaUI";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Hero />
       <About />
       <Project />
+      <SampleReactComponents />
+      <FigmaUI />
       <Contact />
       <Footer />
     </>

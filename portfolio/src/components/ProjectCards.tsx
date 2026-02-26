@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Grid,
   styled,
   Typography,
 } from "@mui/material";
@@ -27,9 +28,11 @@ interface ProjectProps{
 }
 const ProjectCards:React.FC<ProjectProps> =({urls}) =>  {
   return (
-    <>
+    <Grid container spacing={7}>
       {urls.map(item => (
-        <Card key={item.id} sx={{maxWidth:345}}>
+        <Grid key={item.id} size="auto">
+
+           <Card key={item.id} sx={{maxWidth:345}}>
           <CardMedia
             component="img"
             height="194"
@@ -44,8 +47,9 @@ const ProjectCards:React.FC<ProjectProps> =({urls}) =>  {
             </StyledButton>
           </CardContent>
         </Card>
+        </Grid>
       ))}
-    </>
+    </Grid>
   );
 }
 

@@ -12,6 +12,7 @@ import image8 from "../assets/missionEnding.png"
 import image9 from "../assets/institutionLogin.png"
 import image10 from "../assets/institutionLoginConfirm.png"
 import image11 from "../assets/institutionLoginDropdown.png"
+import "react-image-gallery/styles/image-gallery.css";
 
 
 function FigmaUI() {
@@ -68,14 +69,16 @@ function FigmaUI() {
   ];
 
   return (
-    <div className="flex flex-col w-full items-center">
-      <span className="p-4">
-        <h1 className="py-4">UI/UX Design Projects</h1>
-        <p>
-          Due to confidentiality of the data used in the original UI work, the
+    <div className=" bg-primary text-cyan-700 lex flex-col w-full items-center">
+            <div className="about-info mb-5 p-6">
+        <h2 className="text-4xl font-bold mb-5">UI/UX Design Projects</h2>
+
+        <p className="pb-5">
+             Due to confidentiality of the data used in the original UI work, the
           data used in this project is mock data for viewability purposes.
         </p>
-      </span>
+      </div>
+      <div className="flex flex-row gap-2 not-lg:flex-wrap not-xl:flex-wrap not-2xl:flex-wrap">
       <span className="flex flex-col md:max-w-2xl max-w-md p-4">
         <h4 className="font-bold">SSO Reporting Tools Wireframes</h4>
         <p>
@@ -83,13 +86,12 @@ function FigmaUI() {
           and developed the frontend of the application using Next.js with the
           backend being Springboot
         </p>
-      </span>
-      <div>
+              <div>
         <div style={{ width: "200", height: "200" }}>
           <ImageGallery ref={galleryRef} items={images} />
         </div>
       </div>
-
+      </span>
       <span
         className="flex flex-col md:max-w-2xl max-w-md p-4"
         id="mission-control"
@@ -116,6 +118,7 @@ function FigmaUI() {
           <ImageGallery ref={galleryRef} items={institutionImages} />
         </div>
       </span>
+      </div>
     </div>
   );
 }

@@ -6,8 +6,8 @@ import { ButtonToggleContext } from './useButtonToggleContext';
  
 
  export interface ButtonToggleContextProps {
-    currentIndex: number
-    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
+    currentIndex: number;
+    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
   }
 
    interface ButtonToggleProviderProps {

@@ -47,11 +47,6 @@ const Header = () => {
               <a href={link.url} className="px-4 py-5 text-white text-lg hover:dark-cyan">{link.label}</a>
             </li>
           ))}
-          <li>
-            <a href={resumePdf} id="#resume" target="_blank" rel="noreferrer" className="text-white">
-              Resume
-            </a>
-          </li>
         </ul>
       </nav>
 
