@@ -1,6 +1,3 @@
-import { SampleReactComponents } from "../components/SampleReactComponents";
-import PhotoGallery from "../components/PhotoGallery";
-import FigmaUI from "../components/FigmaUI";
 import ProjectCards from "../components/ProjectCards";
 import image1 from "./../assets/todoapp.png";
 import image2 from "./../assets/icanbeher.png";

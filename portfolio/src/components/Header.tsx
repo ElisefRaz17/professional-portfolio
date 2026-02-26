@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
-import resumePdf from "./../assets/ITResume.pdf"
-
 const Header = () => {
   const links = [
     { url: "#hero", label: "Home" },

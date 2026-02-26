@@ -71,6 +71,7 @@ test('render Pill with emphasis variant', () => {
   );
 
   expect(infoEmphasisContainer.querySelector('.bg-blue-600'));
+  expect(warningEmphasiContainer.querySelector('.bg-yellow-100'));
 test('renders Pill with left icon when icon placement is left', () => {
   const LeftIcon = () => <span data-testid="left-icon">L</span>;
   const { getByTestId } = render(<Pill leftIcon={<LeftIcon />} />);
