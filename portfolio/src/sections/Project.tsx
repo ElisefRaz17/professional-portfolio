@@ -5,6 +5,7 @@ import image3 from "./../assets/weathertracker.png";
 import image5 from "./../assets/ManualUpload6.png";
 import image6 from "./../assets/TipApp.png";
 import image7 from "./../assets/savings-tracker-home.png";
+import image8 from "./../assets/tech_care_dashboard.png"
 interface Url {
   id: number;
   name: string;
@@ -34,7 +35,7 @@ const Project = () => {
       id: 2,
       name: "Tech Card Dashboard",
       url: "https://techdashboard-deploy-vercel.vercel.app",
-      previewImg: image7,
+      previewImg: image8,
       description: "A React app that utlizes a REST API to retrieve patient data and health statistics.",
     },
     {
