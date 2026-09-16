@@ -6,7 +6,6 @@ import {
 import HeroImage from "./../assets/HeroImage1.png";
 import OrganicShape from "./../assets/OrganicShape.png";
 import { Button } from "@mui/material";
-import file from "../assets/ITResume.pdf";
 const Hero = () => {
   return (
     <section className="bg-primary px-5 text-amber-800 py-32" id="hero">
@@ -67,17 +66,6 @@ const Hero = () => {
             />
           </div>
         </div>
-        <a
-          href={file}
-          download="ResumeDoc"
-          target="_blank"
-          className="bg-orange-700 rounded-md py-2 w-fit hover:bg-orange-500"
-          rel="noreferrer"
-        >
-          <Button style={{ color: "white", textAlign: "center" }}>
-           My Resume
-          </Button>
-        </a>
       </div>
     </section>
   );
