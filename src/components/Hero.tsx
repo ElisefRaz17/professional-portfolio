@@ -5,7 +5,6 @@ import {
 } from "react-icons/ai";
 import HeroImage from "./../assets/HeroImage1.png";
 import OrganicShape from "./../assets/OrganicShape.png";
-import { Button } from "@mui/material";
 const Hero = () => {
   return (
     <section className="bg-primary px-5 text-amber-800 py-32" id="hero">
